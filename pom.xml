@@ -91,6 +91,7 @@
                                     <include>org.apache.thrift:libthrift</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
                                     <include>org.slf4j:*</include>
+                                    <include>log4j:*</include>
                                     <include>com.google.guava:guava</include>
                                 </includes>
                             </artifactSet>
