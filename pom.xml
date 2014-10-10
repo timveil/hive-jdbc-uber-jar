@@ -6,12 +6,14 @@
 
     <groupId>hive-jdbc-jars</groupId>
     <artifactId>hive-jdbc-jars</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <hive-jdbc.version>0.13.0</hive-jdbc.version>
+        <hadoop-common.version>2.4.0</hadoop-common.version>
     </properties>
 
     <repositories>
@@ -38,15 +40,14 @@
         <dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-jdbc</artifactId>
-            <version>0.13.0</version>
+            <version>${hive-jdbc.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>2.4.0</version>
+            <version>${hadoop-common.version}</version>
         </dependency>
-
 
     </dependencies>
 
