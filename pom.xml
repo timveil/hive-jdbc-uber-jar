@@ -13,8 +13,8 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hive-jdbc.version>0.13.0</hive-jdbc.version>
-        <hadoop-common.version>2.4.0</hadoop-common.version>
+        <hive-jdbc.version>0.14.0.2.2.0.0-2041</hive-jdbc.version>
+        <hadoop-common.version>2.6.0.2.2.0.0-2041</hadoop-common.version>
     </properties>
 
     <repositories>
@@ -48,6 +48,12 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
             <version>${hadoop-common.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>
