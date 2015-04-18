@@ -92,6 +92,8 @@
                                     <include>org.apache.thrift:libthrift</include>
                                     <include>org.slf4j:*</include>
                                     <include>log4j:*</include>
+                                    <include>log4j:*</include>
+                                    <include>org.apache.hive.shims:*</include>
                                     <include>commons-logging:commons-logging</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
                                     <include>org.apache.httpcomponents:httpclient</include>
