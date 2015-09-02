@@ -92,22 +92,21 @@
                             </filters>
                             <artifactSet>
                                 <includes>
+                                    <include>com.google.guava:guava</include>
+                                    <include>commons-codec:commons-codec</include>
+                                    <include>commons-logging:commons-logging</include>
+                                    <include>log4j:*</include>
+                                    <include>org.apache.hadoop:hadoop-common</include>
+                                    <include>org.apache.hive:hive-common</include>
                                     <include>org.apache.hive:hive-jdbc</include>
-                                    <include>org.apache.hive:hive-service</include>
                                     <include>org.apache.hive:hive-metastore</include>
+                                    <include>org.apache.hive:hive-service</include>
+                                    <include>org.apache.hive.shims:*</include>
+                                    <include>org.apache.httpcomponents:httpclient</include>
+                                    <include>org.apache.httpcomponents:httpcore</include>
                                     <include>org.apache.thrift:libfb303</include>
                                     <include>org.apache.thrift:libthrift</include>
                                     <include>org.slf4j:*</include>
-                                    <include>log4j:*</include>
-                                    <include>log4j:*</include>
-                                    <include>org.apache.hive.shims:*</include>
-                                    <include>commons-logging:commons-logging</include>
-                                    <include>org.apache.hadoop:hadoop-common</include>
-                                    <include>org.apache.httpcomponents:httpclient</include>
-                                    <include>org.apache.httpcomponents:httpcore</include>
-                                    <include>org.apache.hive:hive-common</include>
-                                    <include>commons-codec:commons-codec</include>
-                                    <include>com.google.guava:guava</include>
                                 </includes>
                             </artifactSet>
                             <transformers>
