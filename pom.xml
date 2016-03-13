@@ -7,14 +7,14 @@
     <groupId>hive-jdbc-uber</groupId>
     <artifactId>hive-jdbc-uber</artifactId>
     <packaging>jar</packaging>
-    <version>2.3.4.0-3485</version>
+    <version>2.4.0.0-169</version>
 
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hive.version>1.2.1.2.3.4.0-3485</hive.version>
-        <hadoop.version>2.7.1.2.3.4.0-3485</hadoop.version>
+        <hive.version>1.2.1000.2.4.0.0-169</hive.version>
+        <hadoop.version>2.7.1.2.4.0.0-169</hadoop.version>
         <slf4j.version>1.7.13</slf4j.version>
     </properties>
 
