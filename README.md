@@ -12,22 +12,22 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 2. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to the `hive-jdbc-uber-1.0-x.jar` created above.
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/wiki/images/driver.png)
+![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/driver.png)
 
 3. Next create a new connection.  In this case I'm pointing to Hive on my Hortonworks Sandbox.
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/wiki/images/connection.png)
+![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/connection.png)
 
 ## IntelliJ IDEA
 Below is an example configuration using IntelliJ [IDEA's](http://www.jetbrains.com/idea/) database capabilities:
 
 1. Under "Data Sources and Drivers", first create a new Driver.
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/wiki/images/intellij-driver.png)
+![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-driver.png)
 
 2. Then create a new Data Source using the new Driver
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/wiki/images/intellij-connection.png)
+![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection.png)
 
 ## How to Build
 To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-1.0-x.jar` will be created in your `target` directory.  After that, point your favorite tool to this jar.  It will have the necessary Hive JDBC drivers as well as required dependencies.
