@@ -25,11 +25,11 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-driver.png)
 
-2. Then create a new Project Data Source using the new Driver
+2. Then create a new Project Data Source using the new Driver.
 
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection.png)
 
-3. After creating the Project Data Source, test the connection.  You should see the following
+3. After creating the Project Data Source, test the connection.  You should see the following:
 
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection-test.png)
 
