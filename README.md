@@ -10,7 +10,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 1. Under "Tools" > "Driver Manager..." hit the "Create a new driver" button.
 
-2. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to the `hive-jdbc-uber-1.0-x.jar` created above.
+2. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to the `hive-jdbc-uber-x.jar` created above.
 
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/driver.png)
 
@@ -34,4 +34,4 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection-test.png)
 
 ## How to Build
-To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-1.0-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
+To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
