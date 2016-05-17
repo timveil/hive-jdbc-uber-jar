@@ -30,4 +30,4 @@ Below is an example configuration using IntelliJ [IDEA's](http://www.jetbrains.c
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection.png)
 
 ## How to Build
-To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-1.0-x.jar` will be created in your `target` directory.  After that, point your favorite tool to this jar.  It will have the necessary Hive JDBC drivers as well as required dependencies.
+To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-1.0-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
