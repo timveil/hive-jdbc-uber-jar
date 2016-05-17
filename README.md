@@ -18,16 +18,20 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/connection.png)
 
-## IntelliJ IDEA
-Below is an example configuration using IntelliJ [IDEA's](http://www.jetbrains.com/idea/) database capabilities:
+## IntelliJ Data Grip (as of version 2016.1)
+Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
-1. Under "Data Sources and Drivers", first create a new Driver.
+1. Under "File" > "Data Sources...", first create a new Driver.
 
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-driver.png)
 
-2. Then create a new Data Source using the new Driver
+2. Then create a new Project Data Source using the new Driver
 
 ![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection.png)
+
+3. After creating the Project Data Source, test the connection.  You should see the following
+
+![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/intellij-connection-test.png)
 
 ## How to Build
 To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-1.0-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
