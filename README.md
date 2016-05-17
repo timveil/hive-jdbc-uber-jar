@@ -5,7 +5,7 @@ Please note this project only supports connecting to a remote hiveserver in "non
 
 You can download the latest version of the jar [here] (https://github.com/timveil/hive-jdbc-uber-jar/releases)
 
-## DbVisualizer
+## DbVisualizer (as of version 9.2.15)
 Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 1. Under "Tools" > "Driver Manager..." hit the "Create a new driver" button.
