@@ -4,10 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>hive-jdbc-uber</groupId>
+    <groupId>veil.hdp.hive</groupId>
     <artifactId>hive-jdbc-uber</artifactId>
     <packaging>jar</packaging>
     <version>2.4.2.0-258</version>
+
+    <name>Hive JDBC uber jar</name>
+    <description>Hive JDBC uber jar</description>
 
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
