@@ -3,6 +3,8 @@ Sometimes you want to connect your favorite database query or visualization tool
 
 Please note this project only supports connecting to a remote hiveserver in "non-kerberos" mode.  Additional pom changes would be required to support "kerberos secure" mode and "embedded" mode.  See [Hiveserver2 Client Documentation](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC) for recommended jar additions.
 
+:elephant: ** Updated for HDP 2.5.0.0 **
+
 You can download the latest binaries from the releases page:  https://github.com/timveil/hive-jdbc-uber-jar/releases
 
 ## DbVisualizer (as of version 9.2.15)
