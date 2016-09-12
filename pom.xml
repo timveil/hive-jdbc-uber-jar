@@ -64,7 +64,6 @@
                     <artifactId>hive-shims-0.20S</artifactId>
                 </exclusion>
             </exclusions>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -93,7 +92,6 @@
                     <artifactId>apache-log4j-extras</artifactId>
                 </exclusion>
             </exclusions>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -104,13 +102,13 @@
 
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
+            <artifactId>jcl-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
+            <artifactId>log4j-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
 
@@ -118,7 +116,6 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -142,7 +139,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>com.google.guava:guava</include>
-                                    <include>commons-codec:commons-codec</include>
+                                    <include>commons-lang:commons-lang</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
                                     <include>org.apache.hive:hive-common</include>
                                     <include>org.apache.hive:hive-jdbc</include>
@@ -151,18 +148,16 @@
                                     <include>org.apache.hive.shims:*</include>
                                     <include>org.apache.httpcomponents:httpclient</include>
                                     <include>org.apache.httpcomponents:httpcore</include>
-                                    <include>org.apache.thrift:libfb303</include>
                                     <include>org.apache.thrift:libthrift</include>
                                     <include>org.slf4j:slf4j-api</include>
-                                    <include>org.slf4j:log4j-over-slf4j</include>
                                     <include>org.slf4j:jcl-over-slf4j</include>
+                                    <include>org.slf4j:log4j-over-slf4j</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 
