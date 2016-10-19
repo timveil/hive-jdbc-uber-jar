@@ -139,6 +139,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>com.google.guava:guava</include>
+                                    <include>commons-codec:commons-codec</include>
                                     <include>commons-lang:commons-lang</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
                                     <include>org.apache.hive:hive-common</include>
