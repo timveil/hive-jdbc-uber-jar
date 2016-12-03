@@ -5,8 +5,8 @@ Please note this project only supports connecting to a remote hiveserver in "non
 
 You can download the latest binaries from the releases page:  https://github.com/timveil/hive-jdbc-uber-jar/releases
 
-:elephant: __Updated for HDP 2.5.3.0 - 12/01/16__ :elephant: 
-:elephant: __Updated for HDP 2.5.0.0 - 9/12/16__ :elephant: 
+* :elephant: __Updated for HDP 2.5.3.0 - 12/01/16__ :elephant: 
+* Updated for HDP 2.5.0.0 - 9/12/16
 
 ## DbVisualizer (as of version 9.2.15)
 Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
