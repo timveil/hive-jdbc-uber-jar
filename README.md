@@ -1,7 +1,7 @@
 # Overview
 Sometimes you want to connect your favorite database query or visualization tool to Hive. I've found that this can be quite cumbersome, typically requiring you to copy jars from the Hadoop cluster to some place locally that can be read by your tool. The goal of this simple maven project is to easily pull the required jars into a single place locally and create an "uber" or "standalone" jar that can be referenced by any JDBC compliant tool.
 
-Please note this project only supports connecting to a remote hiveserver in "non-kerberos" mode.  Additional pom changes would be required to support "kerberos secure" mode and "embedded" mode.  See [Hiveserver2 Client Documentation](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC) for recommended jar additions.
+Please note this project only supports connecting to a remote hiveserver in "non-kerberos" mode.  Additional pom changes *may* be required to support "kerberos secure" mode and "embedded" mode.  See [Hiveserver2 Client Documentation](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-JDBC) for recommended jar additions.
 
 You can download the latest binaries from the releases page:  https://github.com/timveil/hive-jdbc-uber-jar/releases
 
