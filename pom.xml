@@ -56,6 +56,10 @@
                     <groupId>log4j</groupId>
                     <artifactId>apache-log4j-extras</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.apache.hive.shims</groupId>
+                    <artifactId>hive-shims-0.20S</artifactId>
+                </exclusion>
             </exclusions>
             <scope>runtime</scope>
         </dependency>
