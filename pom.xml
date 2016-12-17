@@ -112,6 +112,12 @@
             <version>${slf4j.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -127,11 +133,21 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <manifestEntries>
+                                        <Main-Class>org.apache.hadoop.util.VersionInfo</Main-Class>
+                                    </manifestEntries>
+                                </transformer>
+                            </transformers>
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
                                     <includes>
                                         <include>**/*.class</include>
+                                        <include>**/*-version-info.properties</include>
+                                        <include>**/core-default.xml</include>
+                                        <include>**/*.application-classloader.properties</include>
                                         <include>**/*.MF</include>
                                     </includes>
                                 </filter>
@@ -141,7 +157,10 @@
                                     <include>com.google.guava:guava</include>
                                     <include>commons-codec:commons-codec</include>
                                     <include>commons-lang:commons-lang</include>
+                                    <include>commons-configuration:commons-configuration</include>
+                                    <include>commons-collections:commons-collections</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
+                                    <include>org.apache.hadoop:hadoop-auth</include>
                                     <include>org.apache.hive:hive-common</include>
                                     <include>org.apache.hive:hive-jdbc</include>
                                     <include>org.apache.hive:hive-metastore</include>
@@ -150,6 +169,7 @@
                                     <include>org.apache.httpcomponents:httpclient</include>
                                     <include>org.apache.httpcomponents:httpcore</include>
                                     <include>org.apache.thrift:libthrift</include>
+                                    <include>org.slf4j:slf4j-simple</include>
                                     <include>org.slf4j:slf4j-api</include>
                                     <include>org.slf4j:jcl-over-slf4j</include>
                                     <include>org.slf4j:log4j-over-slf4j</include>
