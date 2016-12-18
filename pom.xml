@@ -59,10 +59,6 @@
                     <groupId>log4j</groupId>
                     <artifactId>apache-log4j-extras</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.apache.hive.shims</groupId>
-                    <artifactId>hive-shims-0.20S</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
 
@@ -136,7 +132,7 @@
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <manifestEntries>
-                                        <Main-Class>org.apache.hadoop.util.VersionInfo</Main-Class>
+                                        <Main-Class>Harness</Main-Class>
                                     </manifestEntries>
                                 </transformer>
                             </transformers>
@@ -146,8 +142,6 @@
                                     <includes>
                                         <include>**/*.class</include>
                                         <include>**/*-version-info.properties</include>
-                                        <include>**/core-default.xml</include>
-                                        <include>**/*.application-classloader.properties</include>
                                         <include>**/*.MF</include>
                                     </includes>
                                 </filter>
