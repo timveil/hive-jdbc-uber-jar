@@ -21,7 +21,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 3. Create a new connection ("Database" > "Create Database Connection") and fill out the details based on your cluster as seen below.
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/secure-connection.png)
+![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/connection.png)
 
 4. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
 
