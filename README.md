@@ -17,35 +17,35 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 2. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.  URL format should be `jdbc:hive2://<server>:<port10000>/<database>`
 
-![](images/driver.png)
+    ![](images/driver.png)
 
 3. Create a new connection ("Database" > "Create Database Connection") and fill out the details based on your cluster as seen below.
 
-![](images/connection.png)
+    ![](images/connection.png)
 
 4. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
 
-```
-Apache Hive
-1.2.1000.2.5.3.0-37
-null
-null
-```
+    ```
+    Apache Hive
+    1.2.1000.2.5.3.0-37
+    null
+    null
+    ```
 
 ## IntelliJ Data Grip (as of version 2016.1)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
 1. Under "File" > "Data Sources...", first create a new Driver.
 
-![](images/intellij-driver.png)
+    ![](images/intellij-driver.png)
 
 2. Then create a new Project Data Source using the new Driver.
 
-![](images/intellij-connection.png)
+    ![](images/intellij-connection.png)
 
 3. After creating the Project Data Source, test the connection.  You should see the following:
 
-![](images/intellij-connection-test.png)
+    ![](images/intellij-connection-test.png)
 
 # Kerberized Setup
 Connecting a JDBC tool to a kerberized cluster is a bit more complicated than connecting to a non-kerberized cluster.  Before getting started, ensure the following:
@@ -79,31 +79,31 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
 4. Open DbVisualizer preferences ("DbVisualizer" > "Preferences") and add the following properties.  DbVisualizer will need to be restarted after applying these changes.
 
-```
--Dsun.security.krb5.debug=true
--Djavax.security.auth.useSubjectCredsOnly=false
-```
+    ```
+    -Dsun.security.krb5.debug=true
+    -Djavax.security.auth.useSubjectCredsOnly=false
+    ```
 
-![](images/tool-properties.png)
+    ![](images/tool-properties.png)
 
 3. Open the Diver Manager dialog ("Tools" > "Driver Manager...") and hit the "Create a new driver" icon.
 
 4. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.  URL format should be `jdbc:hive2://<server>:<port10000>/<database>`
 
-![](images/driver.png)
+    ![](images/driver.png)
 
 5. Create a new connection ("Database" > "Create Database Connection") and fill out the details based on your cluster as seen below.  Please note that you must append the "principal" to the "database" parameter for kerberized connections.
 
-![](images/secure-connection.png)
+    ![](images/secure-connection.png)
 
 6. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
 
-```
-Apache Hive
-1.2.1000.2.5.3.0-37
-null
-null
-```
+    ```
+    Apache Hive
+    1.2.1000.2.5.3.0-37
+    null
+    null
+    ```
 
 ## IntelliJ Data Grip (as of version 2016.3)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
@@ -112,17 +112,17 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 
 2. Under "File" > "Data Sources...", first create a new Driver.
 
-![](images/intellij-driver.png)
+    ![](images/intellij-driver.png)
 
 3. Then create a new Project Data Source using the new Driver.
 
-![General Tab](images/intellij-secure-connection-general.png)
+    ![General Tab](images/intellij-secure-connection-general.png)
 
-![Advanced Tab](images/intellij-secure-connection-advanced.png)
+    ![Advanced Tab](images/intellij-secure-connection-advanced.png)
 
 4. After creating the Project Data Source, test the connection.  You should see the following:
 
-![](images/intellij-connection-test.png)
+    ![](images/intellij-connection-test.png)
 
 # How to Build
 To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
