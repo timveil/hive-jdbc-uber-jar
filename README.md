@@ -11,7 +11,7 @@ You can download the latest binaries from the releases page:  https://github.com
 
 # Non-Kerberized Setup
 
-## DbVisualizer (as of version 9.2.15)
+## DbVisualizer (as of version 9.5.5)
 Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 1. Open the Diver Manager dialog ("Tools" > "Driver Manager...") and hit the "Create a new driver" icon.
@@ -33,7 +33,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
     null
     ```
 
-## IntelliJ Data Grip (as of version 2016.1)
+## IntelliJ Data Grip (as of version 2016.3)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
 1. Under "File" > "Data Sources...", first create a new Driver.
