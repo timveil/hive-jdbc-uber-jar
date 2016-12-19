@@ -100,5 +100,24 @@ null
 null
 ```
 
+## IntelliJ Data Grip (as of version 2016.3)
+Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
+
+1. `kinit` with an appropriate principal and launch DataGrip
+
+2. Under "File" > "Data Sources...", first create a new Driver.
+
+![](images/intellij-driver.png)
+
+3. Then create a new Project Data Source using the new Driver.
+
+![General Tab](images/intellij-secure-connection-general.png)
+
+![Advanced Tab](images/intellij-secure-connection-advanced.png)
+
+4. After creating the Project Data Source, test the connection.  You should see the following:
+
+![](images/intellij-connection-test.png)
+
 # How to Build
 To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
