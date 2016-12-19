@@ -79,6 +79,11 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
 4. Open DbVisualizer preferences ("DbVisualizer" > "Preferences") and add the following properties.  DbVisualizer will need to be restarted after applying these changes.
 
+```
+-Dsun.security.krb5.debug=true
+-Djavax.security.auth.useSubjectCredsOnly=false
+```
+
 ![](images/tool-properties.png)
 
 3. Open the Diver Manager dialog ("Tools" > "Driver Manager...") and hit the "Create a new driver" icon.
