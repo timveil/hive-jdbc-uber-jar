@@ -17,11 +17,11 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 2. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.  URL format should be `jdbc:hive2://<server>:<port10000>/<database>`
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/driver.png)
+![](images/driver.png)
 
 3. Create a new connection ("Database" > "Create Database Connection") and fill out the details based on your cluster as seen below.
 
-![](https://github.com/timveil/hive-jdbc-uber-jar/blob/master/images/connection.png)
+![](images/connection.png)
 
 4. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
 
