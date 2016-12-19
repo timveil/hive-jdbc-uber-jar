@@ -1,7 +1,7 @@
 # Overview
 Sometimes you want to connect your favorite database query or visualization tool to Hive. I've found that this can be quite cumbersome, typically requiring you to copy jars from the Hadoop cluster to some place locally that can be read by your tool. The goal of this simple maven project is to easily pull the required jars into a single place locally and create an "uber" or "standalone" jar that can be referenced by any JDBC compliant tool.
 
-Please note this project only works against both Kerberized and Non-Kerberized clusters.  Configuring tools to work against Kerberized clusters is typically more involved and requires an understanding of Kerberos.  A full explanation of configuring Kerberos is outside the scope of this project.
+Please note this jar works with both kerberized and non-kerberized clusters.  Configuring tools to work against kerberized clusters is typically more involved and requires an understanding of Kerberos.  A full explanation of configuring Kerberos is outside the scope of this project.
 
 You can download the latest binaries from the releases page:  https://github.com/timveil/hive-jdbc-uber-jar/releases
 
@@ -9,7 +9,7 @@ You can download the latest binaries from the releases page:  https://github.com
 * Updated for HDP 2.5.3.0 - 12/01/16
 * Updated for HDP 2.5.0.0 - 09/12/16
 
-# Non-Kerberized Setup
+# Non-kerberized Setup
 
 ## DbVisualizer (as of version 9.5.5)
 Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
