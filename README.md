@@ -67,13 +67,6 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
     ```
     version=2.7.3.2.5.3.0-37
-    revision=
-    branch=
-    user=
-    date=
-    url=
-    srcChecksum=
-    protocVersion=2.5.0
     ```
 
 2. `kinit` with an appropriate principal and launch DbVisualizer
