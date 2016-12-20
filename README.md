@@ -67,7 +67,7 @@ if (is == null) {
 }
 ```
 
-This updated code is inserted into the final jar and replaces the copy of `org.apache.hadoop.util.VersionInfo` found in `hadoop-common.jar`.
+This updated code is inserted into the final "uber" jar and replaces the copy of `org.apache.hadoop.util.VersionInfo` originally found in `hadoop-common.jar`.
 
 # Non-kerberized Setup
 
