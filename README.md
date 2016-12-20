@@ -112,6 +112,11 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 
     ![General Tab](images/intellij-secure-connection-general.png)
 
+    ```dosini
+    -Dsun.security.krb5.debug=true
+    -Djavax.security.auth.useSubjectCredsOnly=false
+    ```
+
     ![Advanced Tab](images/intellij-secure-connection-advanced.png)
 
 4. After creating the Project Data Source, test the connection.  You should see the following:
