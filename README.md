@@ -40,7 +40,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 ## IntelliJ Data Grip (as of version 2016.3)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
-1. Under "File" > "Data Sources...", first create a new Driver.
+1. Under "File" > "Data Sources...", create a new Driver.
 
     ```
     jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]
@@ -116,7 +116,7 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 
 1. `kinit` with an appropriate principal and launch DataGrip
 
-2. Under "File" > "Data Sources...", first create a new Driver.
+2. Under "File" > "Data Sources...", create a new Driver.
 
     ```
     jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]
