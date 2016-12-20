@@ -127,7 +127,7 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
 * You can succesfully `kinit` from your workstation against the realm specified in your `krb5.conf` file
 
     ```bash
-    # for example, from my Mac, i execute the follwing command to authenticate to the kdc
+    # for example, from my Mac, i execute the follwing command
     kinit -t /[path to my keytab]/tveil.keytab
     ```
 
