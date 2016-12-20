@@ -49,20 +49,23 @@ java.lang.RuntimeException: Illegal Hadoop Version: Unknown (expected A.B.* form
 The trouble seems to be caused by the way `org.apache.hadoop.util.VersionInfo` attempts to load the properties file using `Thread.currentThread().getContextClassLoader()`.  I suspect the difference in behavior between tools boils down to how each chooses to load the "uber" jar.  In any event, I have overwritten `org.apache.hadoop.util.VersionInfo` in this project to use a more robust approach for loading the properties file.
 
 ```java
-// Original code uses Thread.currentThread().getContextClassLoader() which does not contain the properties file in DbVisualizer or SQuirreLSQL
+// Original code uses Thread.currentThread().getContextClassLoader() which does not
+// contain the properties file in DbVisualizer or SQuirreLSQL
 
 is = Thread.currentThread().getContextClassLoader().getResourceAsStream(versionInfoFile);
 
 ```
 
 ```java
-// My updated code first checks the Thread.currentThread().getContextClassLoader(), but if no InputStream is found then checks this.getClass().getClassLoader().
-// In my testing, this eliminated the above error in both DbVisualizer and SQuirrelSQL.  The behavior of DataGrip was unchanged.
+// My updated code first checks the Thread.currentThread().getContextClassLoader(), but if no InputStream is found
+// then checks this.getClass().getClassLoader(). In my testing, this eliminated the above error in
+// both DbVisualizer and SQuirrelSQL.  The behavior of DataGrip was unchanged.
 
 is = Thread.currentThread().getContextClassLoader().getResourceAsStream(versionInfoFile);
 if (is == null) {
     LogFactory.getLog(getClass()).warn("Could not find '" +
-            versionInfoFile + "' in Thread.currentThread().getContextClassLoader().  Trying this.getClass().getClassLoader()");
+            versionInfoFile + "' in Thread.currentThread().getContextClassLoader()."
+            + "  Trying this.getClass().getClassLoader()");
     is = this.getClass().getClassLoader().getResourceAsStream(versionInfoFile);
 }
 ```
