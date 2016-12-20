@@ -61,9 +61,9 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
     ```
 
 ## DbVisualizer (as of version 9.5.5)
-Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) against a kerberized cluster:
+Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) against a kerberized cluster.  This was only tested using my Mac workstation.  I suspect similar steps would need to be taken on Windows machine.
 
-1. As of DbVisualizer 9.5.5 for Mac, attempting to connect to a kerberized cluster will cause the following exception, `Illegal Hadoop Version: Unknown (expected A.B.* format)`.  This can be avoided by creating a file called `common-version-info.properties` and placing it the following directory `/Applications/DbVisualizer.app/Contents/java/app/resources`.  You can download a copy of the file [here](etc/common-version-info.properties) or add the following contents:
+1. With DbVisualizer, attempting to connect to a kerberized cluster will cause the following exception, `Illegal Hadoop Version: Unknown (expected A.B.* format)`.  This can be avoided by creating a file called `common-version-info.properties` and placing it the following directory `/Applications/DbVisualizer.app/Contents/java/app/resources`.  You can download a copy of the file [here](etc/common-version-info.properties) or add the following contents:
 
     ```
     version=2.7.3.2.5.3.0-37
