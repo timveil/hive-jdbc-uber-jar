@@ -145,6 +145,12 @@
                                         <include>**/*.MF</include>
                                     </includes>
                                 </filter>
+                                <filter>
+                                    <artifact>org.apache.hadoop:hadoop-common</artifact>
+                                    <excludes>
+                                        <exclude>org/apache/hadoop/util/VersionInfo</exclude>
+                                    </excludes>
+                                </filter>
                             </filters>
                             <artifactSet>
                                 <includes>
