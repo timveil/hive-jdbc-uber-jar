@@ -9,6 +9,54 @@ You can download the latest binaries from the releases page:  https://github.com
 * Updated for HDP 2.5.3.0 - 12/01/16
 * Updated for HDP 2.5.0.0 - 09/12/16
 
+## Note about Kerberos and the workaround
+When connecting to a kerberized cluster, ultimately the class `org.apache.hadoop.util.VersionInfo` is loaded.  This class attempts to load a file called `*-version-info.properties` in an effort to determine the current Hadoop version.  To do this, the following snippet of code is called:
+
+```java
+  protected VersionInfo(String component) {
+    info = new Properties();
+    String versionInfoFile = component + "-version-info.properties";
+    InputStream is = null;
+    try {
+      is = Thread.currentThread().getContextClassLoader().getResourceAsStream(versionInfoFile);
+      if (is == null) {
+        throw new IOException("Resource not found");
+      }
+      info.load(is);
+    } catch (IOException ex) {
+      LogFactory.getLog(getClass()).warn("Could not read '" +
+          versionInfoFile + "', " + ex.toString(), ex);
+    } finally {
+      IOUtils.closeStream(is);
+    }
+  }
+```
+
+When using DataGrip, this code executes successfully, but with DbVisualizer and other tools like SQuirreLSQL, the properties file is not found and errors are generated downstream.  For example, the following error is often encountered if the properties file fails to load.
+
+```
+java.lang.RuntimeException: Illegal Hadoop Version: Unknown (expected A.B.* format)
+   at org.apache.hadoop.hive.shims.ShimLoader.getMajorVersion(ShimLoader.java:168)
+   at org.apache.hadoop.hive.shims.ShimLoader.loadShims(ShimLoader.java:143)
+   at org.apache.hadoop.hive.shims.ShimLoader.getHadoopThriftAuthBridge(ShimLoader.java:129)
+   at org.apache.hive.service.auth.KerberosSaslHelper.getKerberosTransport(KerberosSaslHelper.java:54)
+   at org.apache.hive.jdbc.HiveConnection.createBinaryTransport(HiveConnection.java:414)
+   at org.apache.hive.jdbc.HiveConnection.openTransport(HiveConnection.java:191)
+   at org.apache.hive.jdbc.HiveConnection.<init>(HiveConnection.java:155)
+   at org.apache.hive.jdbc.HiveDriver.connect(HiveDriver.java:105)
+```
+
+The trouble seems to be caused by the way `org.apache.hadoop.util.VersionInfo` attempts to load the properties file using the current thread's classloader.  I suspect the difference in behavior between tools boils down to how each chooses to load the driver jars.  In any event, I have overwritten `org.apache.hadoop.util.VersionInfo` in this project to use a less problematic approach for loading the properties file.  This one line code change works in all tested tools.
+
+```java
+// Original code uses Thread.currentThread().getContextClassLoader() which does not contain the properties file in DbVisualizer or SQuirreLSQL
+is = Thread.currentThread().getContextClassLoader().getResourceAsStream(versionInfoFile);
+
+// My updated code uses the classloader of the calling class and has more predictable results.  The properties file is found in all tools.
+is = this.getClass().getClassLoader().getResourceAsStream(versionInfoFile);
+```
+
+
 # Non-kerberized Setup
 
 ## DbVisualizer (as of version 9.5.5)
@@ -69,13 +117,7 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
     ```
 
 ## DbVisualizer (as of version 9.5.5)
-Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) against a kerberized cluster.  This was only tested using my Mac workstation.  I suspect similar steps would need to be taken on Windows machine.
-
-1. With DbVisualizer, attempting to connect to a kerberized cluster will cause the following exception, `Illegal Hadoop Version: Unknown (expected A.B.* format)`.  This can be avoided by creating a file called `common-version-info.properties` and placing it the following directory `/Applications/DbVisualizer.app/Contents/java/app/resources`.  You can download a copy of the file [here](etc/common-version-info.properties) or add the following contents:
-
-    ```dosini
-    version=2.7.3.2.5.3.0-37
-    ```
+Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) against a kerberized cluster.
 
 2. `kinit` with an appropriate principal and launch DbVisualizer
 
