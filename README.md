@@ -26,7 +26,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 4. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
 
-    ```
+    ```fundamental
     Apache Hive
     1.2.1000.2.5.3.0-37
     null
@@ -55,9 +55,9 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
 * You have a valid kerberos principal that can access the appropriate services your custer
 * You can succesfully `kinit` from your workstation against the realm specified in your `krb5.conf` file
 
-    ```
+    ```bash
     # for example, from my Mac, i execute the follwing command to authenticate to the kdc
-    > kinit -t /[path to my keytab]/tveil.keytab
+    kinit -t /[path to my keytab]/tveil.keytab
     ```
 
 ## DbVisualizer (as of version 9.5.5)
@@ -65,7 +65,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
 1. With DbVisualizer, attempting to connect to a kerberized cluster will cause the following exception, `Illegal Hadoop Version: Unknown (expected A.B.* format)`.  This can be avoided by creating a file called `common-version-info.properties` and placing it the following directory `/Applications/DbVisualizer.app/Contents/java/app/resources`.  You can download a copy of the file [here](etc/common-version-info.properties) or add the following contents:
 
-    ```
+    ```dosini
     version=2.7.3.2.5.3.0-37
     ```
 
@@ -73,7 +73,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
 4. Open DbVisualizer preferences ("DbVisualizer" > "Preferences") and add the following properties.  DbVisualizer will need to be restarted after applying these changes.
 
-    ```
+    ```dosini
     -Dsun.security.krb5.debug=true
     -Djavax.security.auth.useSubjectCredsOnly=false
     ```
@@ -92,7 +92,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
 6. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
 
-    ```
+    ```fundamental
     Apache Hive
     1.2.1000.2.5.3.0-37
     null
