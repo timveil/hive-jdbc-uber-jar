@@ -46,7 +46,7 @@ java.lang.RuntimeException: Illegal Hadoop Version: Unknown (expected A.B.* form
    at org.apache.hive.jdbc.HiveDriver.connect(HiveDriver.java:105)
 ```
 
-The trouble seems to be caused by the way `org.apache.hadoop.util.VersionInfo` attempts to load the properties file using the current thread's classloader.  I suspect the difference in behavior between tools boils down to how each chooses to load the driver jars.  In any event, I have overwritten `org.apache.hadoop.util.VersionInfo` in this project to use a more robust approach for loading the properties file.
+The trouble seems to be caused by the way `org.apache.hadoop.util.VersionInfo` attempts to load the properties file using `Thread.currentThread().getContextClassLoader()`.  I suspect the difference in behavior between tools boils down to how each chooses to load the driver jars.  In any event, I have overwritten `org.apache.hadoop.util.VersionInfo` in this project to use a more robust approach for loading the properties file.
 
 ```java
 // Original code uses Thread.currentThread().getContextClassLoader() which does not contain the properties file in DbVisualizer or SQuirreLSQL
