@@ -18,15 +18,15 @@
 
 package org.apache.hadoop.util;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.classification.InterfaceAudience;
 import org.apache.hadoop.classification.InterfaceStability;
 import org.apache.hadoop.io.IOUtils;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * This class returns build information about Hadoop components.
@@ -43,7 +43,12 @@ public class VersionInfo {
         String versionInfoFile = component + "-version-info.properties";
         InputStream is = null;
         try {
-            is = this.getClass().getClassLoader().getResourceAsStream(versionInfoFile);
+            is = Thread.currentThread().getContextClassLoader().getResourceAsStream(versionInfoFile);
+            if (is == null) {
+                LogFactory.getLog(getClass()).warn("Could not find '" +
+                        versionInfoFile + "' in Thread.currentThread().getContextClassLoader().  Trying this.getClass().getClassLoader()");
+                is = this.getClass().getClassLoader().getResourceAsStream(versionInfoFile);
+            }
             if (is == null) {
                 throw new IOException("Resource not found");
             }
@@ -84,7 +89,7 @@ public class VersionInfo {
         return info.getProperty("srcChecksum", "Unknown");
     }
 
-    protected String _getBuildVersion(){
+    protected String _getBuildVersion() {
         return getVersion() +
                 " from " + _getRevision() +
                 " by " + _getUser() +
@@ -96,8 +101,10 @@ public class VersionInfo {
     }
 
     private static VersionInfo COMMON_VERSION_INFO = new VersionInfo("common");
+
     /**
      * Get the Hadoop version.
+     *
      * @return the Hadoop version string, eg. "0.6.3-dev"
      */
     public static String getVersion() {
@@ -106,6 +113,7 @@ public class VersionInfo {
 
     /**
      * Get the subversion revision number for the root directory
+     *
      * @return the revision number, eg. "451451"
      */
     public static String getRevision() {
@@ -114,6 +122,7 @@ public class VersionInfo {
 
     /**
      * Get the branch on which this originated.
+     *
      * @return The branch name, e.g. "trunk" or "branches/branch-0.20"
      */
     public static String getBranch() {
@@ -122,6 +131,7 @@ public class VersionInfo {
 
     /**
      * The date that Hadoop was compiled.
+     *
      * @return the compilation date in unix date format
      */
     public static String getDate() {
@@ -130,6 +140,7 @@ public class VersionInfo {
 
     /**
      * The user that compiled Hadoop.
+     *
      * @return the username of the user
      */
     public static String getUser() {
@@ -155,19 +166,19 @@ public class VersionInfo {
      * Returns the buildVersion which includes version,
      * revision, user and date.
      */
-    public static String getBuildVersion(){
+    public static String getBuildVersion() {
         return COMMON_VERSION_INFO._getBuildVersion();
     }
 
     /**
      * Returns the protoc version used for the build.
      */
-    public static String getProtocVersion(){
+    public static String getProtocVersion() {
         return COMMON_VERSION_INFO._getProtocVersion();
     }
 
     public static void main(String[] args) {
-        LOG.debug("version: "+ getVersion());
+        LOG.debug("version: " + getVersion());
         System.out.println("Hadoop " + getVersion());
         System.out.println("Subversion " + getUrl() + " -r " + getRevision());
         System.out.println("Compiled by " + getUser() + " on " + getDate());
