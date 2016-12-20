@@ -56,6 +56,7 @@ is = Thread.currentThread().getContextClassLoader().getResourceAsStream(versionI
 is = this.getClass().getClassLoader().getResourceAsStream(versionInfoFile);
 ```
 
+This updated code is inserted into the final jar and replaces the copy of `org.apache.hadoop.util.VersionInfo` found in `hadoop-common.jar`
 
 # Non-kerberized Setup
 
