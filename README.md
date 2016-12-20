@@ -132,7 +132,7 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
     ```
 
 ## DbVisualizer (as of version 9.5.5)
-Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) against a kerberized cluster.
+Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) against a kerberized cluster:
 
 2. `kinit` with an appropriate principal and launch DbVisualizer
 
@@ -169,7 +169,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
     ```
 
 ## IntelliJ Data Grip (as of version 2016.3)
-Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
+Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/) against a kerberized cluster:
 
 1. `kinit` with an appropriate principal and launch DataGrip
 
