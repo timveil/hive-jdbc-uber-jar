@@ -16,7 +16,11 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 
 1. Open the Diver Manager dialog ("Tools" > "Driver Manager...") and hit the "Create a new driver" icon.
 
-2. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.  URL format should be `jdbc:hive2://<server>:<port10000>/<database>`
+2. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.
+
+    ```
+    jdbc:hive2://<server>:<port10000>/<database>
+    ```
 
     ![](images/driver.png)
 
@@ -37,6 +41,10 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
 
 1. Under "File" > "Data Sources...", first create a new Driver.
+
+    ```
+    jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]
+    ```
 
     ![](images/intellij-driver.png)
 
@@ -82,7 +90,11 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
 3. Open the Diver Manager dialog ("Tools" > "Driver Manager...") and hit the "Create a new driver" icon.
 
-4. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.  URL format should be `jdbc:hive2://<server>:<port10000>/<database>`
+4. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.
+
+    ```
+    jdbc:hive2://<server>:<port10000>/<database>
+    ```
 
     ![](images/driver.png)
 
@@ -105,6 +117,10 @@ Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrai
 1. `kinit` with an appropriate principal and launch DataGrip
 
 2. Under "File" > "Data Sources...", first create a new Driver.
+
+    ```
+    jdbc:hive2://{host}:{port}/{database}[;<;,{:identifier}={:param}>]
+    ```
 
     ![](images/intellij-driver.png)
 
