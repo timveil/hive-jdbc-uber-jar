@@ -100,8 +100,8 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
     null
     ```
 
-## IntelliJ Data Grip (as of version 2016.3)
-Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/):
+## IntelliJ DataGrip (as of version 2016.3)
+Below is an example configuration using IntelliJ [DataGrip](https://www.jetbrains.com/datagrip/):
 
 1. Under "File" > "Data Sources...", create a new Driver.
 
@@ -168,7 +168,7 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
     null
     ```
 
-## IntelliJ Data Grip (as of version 2016.3)
+## IntelliJ DataGrip (as of version 2016.3)
 Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/) against a kerberized cluster:
 
 1. `kinit` with an appropriate principal and launch DataGrip
