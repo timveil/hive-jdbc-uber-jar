@@ -124,7 +124,7 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
 
 * The `krb5.conf` file on your workstation matches the one on your cluster
 * You have a valid kerberos principal that can access the appropriate services your custer
-* You can succesfully `kinit` from your workstation against the realm specified in your `krb5.conf` file
+* You can successfully `kinit` from your workstation against the realm specified in your `krb5.conf` file
 
     ```bash
     # for example, from my Mac, i execute the follwing command
