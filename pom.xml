@@ -56,12 +56,7 @@
                     <groupId>log4j</groupId>
                     <artifactId>apache-log4j-extras</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.apache.hive.shims</groupId>
-                    <artifactId>hive-shims-0.20S</artifactId>
-                </exclusion>
             </exclusions>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -90,7 +85,6 @@
                     <artifactId>apache-log4j-extras</artifactId>
                 </exclusion>
             </exclusions>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -124,7 +118,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>2.4</version>
+                <version>2.4.3</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -140,6 +134,12 @@
                                         <include>**/*-version-info.properties</include>
                                         <include>**/*.MF</include>
                                     </includes>
+                                </filter>
+                                <filter>
+                                    <artifact>org.apache.hadoop:hadoop-common</artifact>
+                                    <excludes>
+                                        <exclude>org/apache/hadoop/util/VersionInfo</exclude>
+                                    </excludes>
                                 </filter>
                             </filters>
                             <artifactSet>
