@@ -168,8 +168,8 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
     null
     ```
 
-## IntelliJ DataGrip (as of version 2016.3)
-Below is an example configuration using IntelliJ [Data Grip](https://www.jetbrains.com/datagrip/) against a kerberized cluster:
+## JetBrains DataGrip (as of version 2016.3)
+Below is an example configuration using JetBrains [Data Grip](https://www.jetbrains.com/datagrip/) against a kerberized cluster:
 
 1. `kinit` with an appropriate principal and launch DataGrip
 
