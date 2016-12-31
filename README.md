@@ -100,8 +100,8 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/):
     null
     ```
 
-## IntelliJ DataGrip (as of version 2016.3)
-Below is an example configuration using IntelliJ [DataGrip](https://www.jetbrains.com/datagrip/):
+## JetBrains DataGrip (as of version 2016.3)
+Below is an example configuration using JetBrains [DataGrip](https://www.jetbrains.com/datagrip/):
 
 1. Under "File" > "Data Sources...", create a new Driver.
 
