@@ -159,6 +159,8 @@
                                     <include>commons-lang:commons-lang</include>
                                     <include>commons-configuration:commons-configuration</include>
                                     <include>commons-collections:commons-collections</include>
+                                    <include>org.apache.curator:curator-client</include>
+                                    <include>org.apache.curator:curator-framework</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
                                     <include>org.apache.hadoop:hadoop-auth</include>
                                     <include>org.apache.hive:hive-common</include>
@@ -169,6 +171,7 @@
                                     <include>org.apache.httpcomponents:httpclient</include>
                                     <include>org.apache.httpcomponents:httpcore</include>
                                     <include>org.apache.thrift:libthrift</include>
+                                    <include>org.apache.zookeeper:zookeeper</include>
                                     <include>org.slf4j:slf4j-simple</include>
                                     <include>org.slf4j:slf4j-api</include>
                                     <include>org.slf4j:jcl-over-slf4j</include>
