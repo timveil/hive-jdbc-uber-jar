@@ -139,7 +139,9 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 4. Open DbVisualizer preferences ("DbVisualizer" > "Preferences") and add the following properties.  DbVisualizer will need to be restarted after applying these changes.
 
     ```dosini
+    # optional flag to help debugging kerberos issues
     -Dsun.security.krb5.debug=true
+
     -Djavax.security.auth.useSubjectCredsOnly=false
     ```
 
@@ -186,7 +188,9 @@ Below is an example configuration using JetBrains [Data Grip](https://www.jetbra
     ![General Tab](images/intellij-secure-connection-general.png)
 
     ```dosini
+    # optional flag to help debugging kerberos issues
     -Dsun.security.krb5.debug=true
+
     -Djavax.security.auth.useSubjectCredsOnly=false
     ```
 
