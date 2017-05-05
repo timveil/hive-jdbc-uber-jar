@@ -7,7 +7,7 @@
     <groupId>veil.hdp.hive</groupId>
     <artifactId>hive-jdbc-uber</artifactId>
     <packaging>jar</packaging>
-    <version>2.5.3.0-37</version>
+    <version>2.6.0.3-8</version>
 
     <name>Hive JDBC uber jar</name>
     <description>Hive JDBC uber jar</description>
