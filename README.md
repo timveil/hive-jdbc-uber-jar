@@ -193,6 +193,10 @@ Below is an example configuration using JetBrains [Data Grip](https://www.jetbra
     -Dsun.security.krb5.debug=true
 
     -Djavax.security.auth.useSubjectCredsOnly=false
+    
+    # Location of the configuration file with all the realms
+    # Your Kerberos system admin can provide krb5.conf, just rename it to krb5.ini
+    -Djava.security.krb5.conf="C:/ProgramData/MIT/Kerberos5/krb5.ini"
     ```
 
     ![Advanced Tab](images/intellij-secure-connection-advanced.png)
