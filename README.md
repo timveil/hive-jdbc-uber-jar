@@ -145,6 +145,10 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
     -Dsun.security.krb5.debug=true
 
     -Djavax.security.auth.useSubjectCredsOnly=false
+    
+    # Depending on your OS or Kerberos install, you may need to pass in the location of your krb5 configuration file.
+    # On mac/linux this is often a krb5.conf file.  On windows, this is often a krb5.ini file.
+    -Djava.security.krb5.conf="[path-to-kerberos-file]/krb5.ini"
     ```
 
     ![](images/tool-properties.png)
@@ -194,6 +198,10 @@ Below is an example configuration using JetBrains [Data Grip](https://www.jetbra
     -Dsun.security.krb5.debug=true
 
     -Djavax.security.auth.useSubjectCredsOnly=false
+    
+    # Depending on your OS or Kerberos install, you may need to pass in the location of your krb5 configuration file.
+    # On mac/linux this is often a krb5.conf file.  On windows, this is often a krb5.ini file.
+    -Djava.security.krb5.conf="[path-to-kerberos-file]/krb5.ini"
     ```
 
     ![Advanced Tab](images/intellij-secure-connection-advanced.png)
