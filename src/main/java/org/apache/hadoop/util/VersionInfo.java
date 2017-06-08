@@ -105,7 +105,6 @@ public class VersionInfo {
 
     /**
      * Get the Hadoop version.
-     *
      * @return the Hadoop version string, eg. "0.6.3-dev"
      */
     public static String getVersion() {
@@ -114,7 +113,6 @@ public class VersionInfo {
 
     /**
      * Get the subversion revision number for the root directory
-     *
      * @return the revision number, eg. "451451"
      */
     public static String getRevision() {
@@ -123,7 +121,6 @@ public class VersionInfo {
 
     /**
      * Get the branch on which this originated.
-     *
      * @return The branch name, e.g. "trunk" or "branches/branch-0.20"
      */
     public static String getBranch() {
@@ -132,7 +129,6 @@ public class VersionInfo {
 
     /**
      * The date that Hadoop was compiled.
-     *
      * @return the compilation date in unix date format
      */
     public static String getDate() {
@@ -141,7 +137,6 @@ public class VersionInfo {
 
     /**
      * The user that compiled Hadoop.
-     *
      * @return the username of the user
      */
     public static String getUser() {
