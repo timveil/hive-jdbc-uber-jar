@@ -238,7 +238,7 @@ log4j.logger.org.apache.thrift=DEBUG
 
 You should now see driver logging in the DbVisualizer logs. 
 
-If the configuration doesn't work or you elect not to to provide a `log4j.properties` file reference, you will see the following messages in your DbVisualizer log.  You can ignore these warnings if you are not interested in the driver logs.
+If the configuration doesn't work or you elect not to provide a `log4j.properties` file reference, you will see the following messages in your DbVisualizer log.  You can ignore these warnings if you are not interested in the driver logs.
 
 ```
 2017-08-09 17:24:39.750 INFO   786 [ExecutorRunner-pool-2-thread-1 - R.flush] log4j:WARN No appenders could be found for logger (org.apache.hive.jdbc.Utils).
