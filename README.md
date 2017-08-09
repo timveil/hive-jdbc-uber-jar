@@ -212,3 +212,28 @@ Below is an example configuration using JetBrains [Data Grip](https://www.jetbra
 
 # How to Build
 To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
+
+# Logging
+All logging dependencies have been filtered and bridged with SLF4J in this jar and Log4J has been included as the logging implementation.  While no `log4j.properties` has been included in this jar, its fairly easy to configure Log4J and DbVisualizer to debug whats happening inside JDBC.  To setup Log4J in DbVisualizer, do the following.
+
+1. Create a `log4j.properties` file and put it somewhere easy to remember find on your workstation.  Below is a very simple example.
+
+```log4j
+log4j.rootLogger=WARN, console
+
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%d{HH:mm:ss:SSS} %-5p [%c]: %m%n
+
+log4j.logger.org.apache.hive=DEBUG
+log4j.logger.org.apache.hadoop=DEBUG
+log4j.logger.org.apache.thrift=DEBUG
+```
+
+2. Add the following JVM flag to DbVisualizer preferences (see "DbVisualizer" > "Preferences")
+
+```dosini
+-Dlog4j.configuration=file:[path to your log4j.properties file]/log4j.properties
+```
+
+You should now see driver logging in the DbVisualizer logs. 
