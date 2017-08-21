@@ -132,8 +132,8 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
     # for example, from my Mac, i execute the follwing command
     kinit -t /[path to my keytab]/tveil.keytab
     ```
-* You have installed the [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) jars in the correct place.
-  * In DbVisualizer go to "Help" > "About" > "System Properties" and look for the `java.home` entry.  This should point to the JRE used by the tool.  Make sure the JCE jars are the `lib/security` directory under this folder.  The latest JCE jars have a modified date of `12/20/2013`.
+* You have installed the [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) jars in the correct place.  The latest JCE jars have a modified date of `12/20/2013`.
+  * In DbVisualizer go to "Help" > "About" > "System Properties" and look for the `java.home` entry.  This should point to the JRE used by the tool.  Make sure the updated JCE jars are the `lib/security` directory under this folder.
   * In DataGrip - todo  
 
 ## DbVisualizer (as of version 9.5.5)
