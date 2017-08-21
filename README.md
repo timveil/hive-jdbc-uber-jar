@@ -132,13 +132,16 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
     # for example, from my Mac, i execute the follwing command
     kinit -t /[path to my keytab]/tveil.keytab
     ```
+* You have installed the [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) jars in the correct place.
+  * In DbVisualizer go to "Help" > "About" > "System Properties" and look for the `java.home` entry.  This should point to the JRE used by the tool.  Make sure the JCE jars are the `lib/security` directory under this folder.  The latest JCE jars have a modified date of `12/20/2013`.
+  * In DataGrip - todo  
 
 ## DbVisualizer (as of version 9.5.5)
 Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) against a kerberized cluster:
 
-2. `kinit` with an appropriate principal and launch DbVisualizer
+1. `kinit` with an appropriate principal and launch DbVisualizer
 
-4. Open DbVisualizer preferences ("DbVisualizer" > "Preferences") and add the following properties.  DbVisualizer will need to be restarted after applying these changes.
+1. Open DbVisualizer preferences ("DbVisualizer" > "Preferences") and add the following properties.  DbVisualizer will need to be restarted after applying these changes.
 
     ```dosini
     # optional flag to help debug kerberos issues
@@ -153,9 +156,9 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
     ![](images/tool-properties.png)
 
-3. Open the Diver Manager dialog ("Tools" > "Driver Manager...") and hit the "Create a new driver" icon.
+1. Open the Diver Manager dialog ("Tools" > "Driver Manager...") and hit the "Create a new driver" icon.
 
-4. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.
+1. Fill in the information as seen below.  For the "Driver File Paths" you are pointing to `hive-jdbc-uber-x.jar`.
 
     ```
     jdbc:hive2://<server>:<port10000>/<database>
@@ -163,11 +166,11 @@ Below is an example configuration using [DbVisualizer](http://www.dbvis.com/) ag
 
     ![](images/driver.png)
 
-5. Create a new connection ("Database" > "Create Database Connection") and fill out the details based on your cluster as seen below.  Please note that you must append the "principal" to the "database" parameter for kerberized connections.
+1. Create a new connection ("Database" > "Create Database Connection") and fill out the details based on your cluster as seen below.  Please note that you must append the "principal" to the "database" parameter for kerberized connections.
 
     ![](images/secure-connection.png)
 
-6. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
+1. Hit the "Connect" button to test the connection.  You should see something like the following in the "Connection Message" text area if the connection is successful.
 
     ```fundamental
     Apache Hive
