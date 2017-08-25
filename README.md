@@ -1,4 +1,17 @@
-# Overview
+# Update
+
+When I first created this project in 2014 the Hive project did not produce a "standalone" jar that reliably contained all required dependencies to successfully create a JDBC connection.  Since that time the community has resolved many, if not all, of those early issues.  As of today, the "standalone" jar published by recent versions of Hive make this project mostly obsolete.  You can grab the official Hive standalone jar using maven (see below).
+
+```xml
+<dependency>
+    <groupId>org.apache.hive</groupId>
+    <artifactId>hive-jdbc</artifactId>
+    <version>YOUR VERSION OF HIVE</version>
+    <classifier>standalone</classifier>
+</dependency>
+```       
+
+## Overview
 Sometimes you want to connect your favorite database query or visualization tool to Hive. I've found that this can be quite cumbersome, typically requiring you to copy jars from the Hadoop cluster to some place locally that can be read by your tool. Recent versions of Hive include a "standalone" jar, but even this does not include all required dependencies.  The goal of this simple maven project is to easily pull the required jars into a single place locally and create an "uber" or "standalone" jar that can be referenced by any JDBC compliant tool.
 
 Please note this jar works with both kerberized and non-kerberized clusters.  Configuring tools to work against kerberized clusters is typically more involved and requires an understanding of Kerberos.  A full explanation of configuring Kerberos is outside the scope of this project.
