@@ -111,11 +111,14 @@
             <version>${slf4j.version}</version>
         </dependency>
 
+        <!-- not including logging implementation per github issue #8 -->
+<!--
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+-->
 
     </dependencies>
 
