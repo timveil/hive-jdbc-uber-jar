@@ -13,8 +13,8 @@
     <description>Hive JDBC uber jar</description>
 
     <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <hive.version>1.2.1000.2.6.2.0-205</hive.version>
         <hadoop.version>2.7.3.2.6.2.0-205</hadoop.version>
@@ -35,13 +35,13 @@
     <dependencies>
 
         <!-- adding standalone jar for comparison -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-jdbc</artifactId>
             <version>${hive.version}</version>
             <classifier>standalone</classifier>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>org.apache.hive</groupId>
@@ -111,15 +111,6 @@
             <version>${slf4j.version}</version>
         </dependency>
 
-        <!-- not including logging implementation per github issue #8 -->
-<!--
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
--->
-
     </dependencies>
 
     <build>
@@ -178,7 +169,6 @@
                                     <include>org.apache.httpcomponents:httpcore</include>
                                     <include>org.apache.thrift:libthrift</include>
                                     <include>org.apache.zookeeper:zookeeper</include>
-                                    <include>org.slf4j:slf4j-log4j12</include>
                                     <include>org.slf4j:slf4j-api</include>
                                     <include>org.slf4j:jcl-over-slf4j</include>
                                 </includes>
