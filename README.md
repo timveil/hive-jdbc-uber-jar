@@ -18,7 +18,8 @@ Please note this jar works with both kerberized and non-kerberized clusters.  Co
 
 You can download the latest binaries from the releases page:  https://github.com/timveil/hive-jdbc-uber-jar/releases
 
-* Updated for HDP 2.6.1.0 - 06/08/17  __LATEST__
+* Updated for HDP 2.6.3.0 - 11/01/17  __LATEST__
+* Updated for HDP 2.6.1.0 - 06/08/17
 * Resolved issue with Zookeeper discovery - 01/27/17
 * Added support kerberized clusters - 12/19/16
 * Updated for HDP 2.5.3.0 - 12/01/16
