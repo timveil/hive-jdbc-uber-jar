@@ -1,7 +1,7 @@
 # Update
 
 
-**If you are feeling adventurous, i've been building my own Hive JDBC driver.  Check out that project here:  https://github.com/timveil/hive-jdbc.**
+> **If you are feeling adventurous, i've been building my own Hive JDBC driver.  Check out that project here:  https://github.com/timveil/hive-jdbc.**
 
 
 When I first created this project in 2014 the Hive project did not produce a "standalone" jar that reliably contained all required dependencies to successfully create a JDBC connection.  Since that time the community has resolved many, if not all, of those early issues.  As of today, the "standalone" jar published by recent versions of Hive make this project mostly obsolete.  You can grab the official Hive standalone jar using maven (see below).
