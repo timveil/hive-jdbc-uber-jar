@@ -1,4 +1,4 @@
-> **If you are feeling adventurous, i've been building my own Hive JDBC driver.  Check out that project here:  https://github.com/timveil/hive-jdbc.**
+> **If you are feeling adventurous, I've been building my own Hive JDBC driver.  Check out that project here:  https://github.com/timveil/hive-jdbc.**
 
 
 
