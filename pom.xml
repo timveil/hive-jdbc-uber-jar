@@ -16,7 +16,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hive.version>1.2.1000.2.6.5.0-292</hive.version>
+        <hive.version>2.3.3</hive.version>
         <hadoop.version>2.7.3.2.6.5.0-292</hadoop.version>
         <slf4j.version>1.7.25</slf4j.version>
     </properties>
@@ -164,6 +164,7 @@
                                     <include>org.apache.hive:hive-jdbc</include>
                                     <include>org.apache.hive:hive-metastore</include>
                                     <include>org.apache.hive:hive-service</include>
+                                    <include>org.apache.hive:hive-service-rpc</include>
                                     <include>org.apache.hive.shims:*</include>
                                     <include>org.apache.httpcomponents:httpclient</include>
                                     <include>org.apache.httpcomponents:httpcore</include>
