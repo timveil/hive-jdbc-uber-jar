@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>veil.hdp.hive</groupId>
+    <groupId>io.veil.hive</groupId>
     <artifactId>hive-jdbc-uber</artifactId>
     <packaging>jar</packaging>
-    <version>2.6.5.0-292</version>
+    <version>3.1.2</version>
 
     <name>Hive JDBC uber jar</name>
     <description>Hive JDBC uber jar</description>
@@ -16,32 +16,20 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <hive.version>1.2.1000.2.6.5.0-292</hive.version>
-        <hadoop.version>2.7.3.2.6.5.0-292</hadoop.version>
+        <hive.version>3.1.2</hive.version>
         <slf4j.version>1.7.25</slf4j.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>hwx-releases</id>
-            <url>http://repo.hortonworks.com/content/repositories/releases/</url>
-        </repository>
-        <repository>
-            <id>hwx-public</id>
-            <url>http://repo.hortonworks.com/content/groups/public/</url>
-        </repository>
-    </repositories>
 
     <dependencies>
 
         <!-- adding standalone jar for comparison -->
-        <!--<dependency>
-            <groupId>org.apache.hive</groupId>
-            <artifactId>hive-jdbc</artifactId>
-            <version>${hive.version}</version>
-            <classifier>standalone</classifier>
-            <scope>test</scope>
-        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.hive</groupId>-->
+<!--            <artifactId>hive-jdbc</artifactId>-->
+<!--            <version>${hive.version}</version>-->
+<!--            <classifier>standalone</classifier>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.hive</groupId>
@@ -68,33 +56,9 @@
                     <groupId>log4j</groupId>
                     <artifactId>apache-log4j-extras</artifactId>
                 </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>${hadoop.version}</version>
-            <exclusions>
                 <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>apache-log4j-extras</artifactId>
+                    <groupId>org.glassfish</groupId>
+                    <artifactId>javax.el</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -160,11 +124,17 @@
                                     <include>org.apache.curator:curator-framework</include>
                                     <include>org.apache.hadoop:hadoop-common</include>
                                     <include>org.apache.hadoop:hadoop-auth</include>
+                                    <include>org.apache.hive:hive-classification</include>
+                                    <include>org.apache.hive:hive-storage-api</include>
                                     <include>org.apache.hive:hive-common</include>
                                     <include>org.apache.hive:hive-jdbc</include>
                                     <include>org.apache.hive:hive-metastore</include>
                                     <include>org.apache.hive:hive-service</include>
+                                    <include>org.apache.hive:hive-service-rpc</include>
+                                    <include>org.apache.hive:hive-serde</include>
+                                    <include>org.apache.hive:hive-shims</include>
                                     <include>org.apache.hive.shims:*</include>
+                                    <include>org.apache.hive:hive-upgrade-acid</include>
                                     <include>org.apache.httpcomponents:httpclient</include>
                                     <include>org.apache.httpcomponents:httpcore</include>
                                     <include>org.apache.thrift:libthrift</include>
