@@ -149,7 +149,7 @@ Connecting a JDBC tool to a kerberized cluster is a bit more complicated than co
 * You can successfully `kinit` from your workstation against the realm specified in your `krb5.conf` file
 
     ```bash
-    # for example, from my Mac, i execute the follwing command
+    # for example, from my Mac, i execute the following command
     kinit -t /[path to my keytab]/tveil.keytab
     ```
 * You have installed the [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) jars in the correct place.  The latest JCE jars have a modified date of `12/20/2013`.
@@ -237,7 +237,7 @@ Below is an example configuration using JetBrains [Data Grip](https://www.jetbra
 To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
 
 # Logging
-All logging dependencies have been filtered and bridged with SLF4J in this jar and Log4J has been included as the logging implementation.  While no `log4j.properties` has been included in this jar, its fairly easy to configure Log4J and DbVisualizer to debug whats happening inside JDBC.  To setup Log4J in DbVisualizer, do the following.
+All logging dependencies have been filtered and bridged with SLF4J in this jar and Log4J has been included as the logging implementation.  While no `log4j.properties` has been included in this jar, it's fairly easy to configure Log4J and DbVisualizer to debug what's happening inside JDBC.  To set up Log4J in DbVisualizer, do the following.
 
 1. Create a `log4j.properties` file and put it somewhere easy to remember find on your workstation.  Below is a very simple example.
 
