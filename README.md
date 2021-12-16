@@ -234,7 +234,7 @@ Below is an example configuration using JetBrains [Data Grip](https://www.jetbra
     ![](images/intellij-connection-test.png)
 
 # How to Build
-To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn:package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
+To build locally, you must have Maven installed and properly configured.  After that it's as simple as running `mvn clean package`.  A file called `hive-jdbc-uber-x.jar` will be created in your `target` directory.  The newly created jar will have the Hive JDBC driver as well as all required dependencies.
 
 # Logging
 All logging dependencies have been filtered and bridged with SLF4J in this jar and Log4J has been included as the logging implementation.  While no `log4j.properties` has been included in this jar, it's fairly easy to configure Log4J and DbVisualizer to debug what's happening inside JDBC.  To set up Log4J in DbVisualizer, do the following.
